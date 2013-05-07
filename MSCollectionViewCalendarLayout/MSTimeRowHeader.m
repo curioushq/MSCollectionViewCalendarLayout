@@ -31,7 +31,7 @@
 {
     [super layoutSubviews];
     
-    UIEdgeInsets margin = UIEdgeInsetsMake(0.0, 0.0, 0.0, 8.0);
+    UIEdgeInsets margin = UIEdgeInsetsMake(0.0, 0.0, 0.0, 4.0);
     
     [self.title sizeToFit];
     CGRect titleFrame = self.title.frame;
