@@ -67,6 +67,9 @@ typedef NS_ENUM(NSUInteger, MSHeaderLayoutType) {
 @property (nonatomic, assign) MSHeaderLayoutType headerLayoutType;
 @property (nonatomic, assign) BOOL displayHeaderBackgroundAtOrigin;
 
+@property (nonatomic, assign) NSInteger earliestHourOverride;
+@property (nonatomic, assign) NSInteger latestHourOverride;
+
 - (NSDate *)dateForTimeRowHeaderAtIndexPath:(NSIndexPath *)indexPath;
 - (NSDate *)dateForDayColumnHeaderAtIndexPath:(NSIndexPath *)indexPath;
 

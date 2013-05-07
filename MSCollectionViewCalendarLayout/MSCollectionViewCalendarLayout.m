@@ -731,6 +731,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
     self.sectionLayoutType = ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? MSSectionLayoutTypeHorizontalTile : MSSectionLayoutTypeVerticalTile);
     self.headerLayoutType = MSHeaderLayoutTypeDayColumnAboveTimeRow;
     
+    self.earliestHourOverride = NSIntegerMax;
+    self.latestHourOverride = NSIntegerMin;
+
     // Invalidate layout on minute ticks (to update the position of the current time indicator)
     NSDate *oneMinuteInFuture = [[NSDate date] dateByAddingTimeInterval:60];
     NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:oneMinuteInFuture];
@@ -1073,6 +1076,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 - (NSInteger)earliestHour
 {
+    if (self.earliestHourOverride != NSIntegerMax) {
+        return self.earliestHourOverride;
+    }
     if (self.cachedEarliestHour != NSIntegerMax) {
         return self.cachedEarliestHour;
     }
@@ -1093,6 +1099,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 - (NSInteger)latestHour
 {
+    if (self.latestHourOverride != NSIntegerMin) {
+        return self.latestHourOverride;
+    }
     if (self.cachedLatestHour != NSIntegerMin) {
         return self.cachedLatestHour;
     }
@@ -1113,6 +1122,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 - (NSInteger)earliestHourForSection:(NSInteger)section
 {
+    if (self.earliestHourOverride != NSIntegerMax) {
+        return self.earliestHourOverride;
+    }
     if (self.cachedEarliestHours[@(section)]) {
         return [self.cachedEarliestHours[@(section)] integerValue];
     }
@@ -1134,6 +1146,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 - (NSInteger)latestHourForSection:(NSInteger)section
 {
+    if (self.latestHourOverride != NSIntegerMin) {
+        return self.latestHourOverride;
+    }
     if (self.cachedLatestHours[@(section)]) {
         return [self.cachedLatestHours[@(section)] integerValue];
     }

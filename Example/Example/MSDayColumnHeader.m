@@ -47,7 +47,7 @@
     }
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    dateFormatter.dateFormat = @"EEEE, MMM d";
+    dateFormatter.dateFormat = @"EEE";
     self.title.text = [dateFormatter stringFromDate:day];
     [self setNeedsLayout];
 }

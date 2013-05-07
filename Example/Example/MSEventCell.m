@@ -40,19 +40,19 @@
         self.time = [UILabel new];
         self.time.backgroundColor = [UIColor clearColor];
         self.time.numberOfLines = 0;
-        self.time.font = [UIFont systemFontOfSize:12.0];
+        self.time.font = [UIFont systemFontOfSize:10.0];
         [self.contentView addSubview:self.time];
         
         self.title = [UILabel new];
         self.title.backgroundColor = [UIColor clearColor];
         self.title.numberOfLines = 0;
-        self.title.font = [UIFont boldSystemFontOfSize:12.0];
+        self.title.font = [UIFont boldSystemFontOfSize:10.0];
         [self.contentView addSubview:self.title];
         
         self.location = [UILabel new];
         self.location.backgroundColor = [UIColor clearColor];
         self.location.numberOfLines = 0;
-        self.location.font = [UIFont systemFontOfSize:12.0];
+        self.location.font = [UIFont systemFontOfSize:10.0];
         [self.contentView addSubview:self.location];
         
         [self updateColors];
@@ -64,7 +64,7 @@
 {
     [super layoutSubviews];
     
-    UIEdgeInsets padding = UIEdgeInsetsMake(4.0, 5.0, 4.0, 5.0);
+    UIEdgeInsets padding = UIEdgeInsetsMake(1.0, 5.0, 1.0, 5.0);
     CGFloat contentMargin = 2.0;
     CGFloat contentWidth = (CGRectGetWidth(self.contentView.frame) - padding.left - padding.right);
     
