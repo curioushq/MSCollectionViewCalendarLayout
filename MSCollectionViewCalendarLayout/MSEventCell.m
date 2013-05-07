@@ -8,6 +8,8 @@
 
 #import "MSEventCell.h"
 #import "MSEvent.h"
+#import <QuartzCore/QuartzCore.h>
+#import <UIColor-Utilities/UIColor+Expanded.h>
 
 @interface MSEventCell ()
 

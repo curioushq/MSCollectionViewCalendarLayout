@@ -7,6 +7,7 @@
 //
 
 #import "MSGridline.h"
+#import <UIColor-Utilities/UIColor+Expanded.h>
 
 @implementation MSGridline
 

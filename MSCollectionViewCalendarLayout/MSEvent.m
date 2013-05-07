@@ -7,6 +7,7 @@
 //
 
 #import "MSEvent.h"
+#import <EventKit/EventKit.h>
 
 @implementation MSEvent
 

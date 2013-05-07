@@ -7,6 +7,8 @@
 //
 
 #import "MSTimeRowHeaderBackground.h"
+#import <UIColor-Utilities/UIColor+Expanded.h>
+#import <QuartzCore/QuartzCore.h>
 
 @implementation MSTimeRowHeaderBackground
 

@@ -7,6 +7,7 @@
 //
 
 #import "MSTimeRowHeader.h"
+#import <UIColor-Utilities/UIColor+Expanded.h>
 
 @implementation MSTimeRowHeader
 

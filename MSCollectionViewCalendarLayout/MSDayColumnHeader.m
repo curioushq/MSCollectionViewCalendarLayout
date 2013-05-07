@@ -7,6 +7,8 @@
 //
 
 #import "MSDayColumnHeader.h"
+#import <CupertinoYankee/NSDate+CupertinoYankee.h>
+#import <UIColor-Utilities/UIColor+Expanded.h>
 
 @implementation MSDayColumnHeader
 

@@ -839,16 +839,24 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 #pragma mark Scrolling
 
-- (void)scrollCollectionViewToClosetSectionToCurrentTimeAnimated:(BOOL)animated
+- (void)scrollCollectionViewToClosetSectionToCurrentTimeAnimated:(BOOL)animated scrollPosition:(MSScrollPosition)scrollPosition
 {
     if (self.collectionView.numberOfSections != 0) {
+        NSInteger height = CGRectGetHeight(self.collectionView.frame);
+        if (scrollPosition == MSScrollPositionMiddle) {
+            height *= 0.5;
+        } else if (scrollPosition == MSScrollPositionTop) {
+            height = 0;
+        }
+        height += self.dayColumnHeaderHeight;
+        height += (self.hourHeight * 0.5);
         NSInteger closestSectionToCurrentTime = [self closestSectionToCurrentTime];
         CGPoint contentOffset;
         CGRect currentTimeHorizontalGridlineattributesFrame = [self.currentTimeHorizontalGridlineAttributes[[NSIndexPath indexPathForItem:0 inSection:0]] frame];
         if (self.sectionLayoutType == MSSectionLayoutTypeHorizontalTile) {
             CGFloat yOffset;
             if (!CGRectEqualToRect(currentTimeHorizontalGridlineattributesFrame, CGRectZero)) {
-                yOffset = nearbyintf(CGRectGetMinY(currentTimeHorizontalGridlineattributesFrame) - (CGRectGetHeight(self.collectionView.frame) / 2.0));
+                yOffset = nearbyintf(CGRectGetMinY(currentTimeHorizontalGridlineattributesFrame) - (height));
             } else {
                 yOffset = 0.0;
             }
@@ -857,7 +865,7 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         } else {
             CGFloat yOffset;
             if (!CGRectEqualToRect(currentTimeHorizontalGridlineattributesFrame, CGRectZero)) {
-                yOffset = fmaxf(nearbyintf(CGRectGetMinY(currentTimeHorizontalGridlineattributesFrame) - (CGRectGetHeight(self.collectionView.frame) / 2.0)), [self stackedSectionHeightUpToSection:closestSectionToCurrentTime]);
+                yOffset = fmaxf(nearbyintf(CGRectGetMinY(currentTimeHorizontalGridlineattributesFrame) - (height)), [self stackedSectionHeightUpToSection:closestSectionToCurrentTime]);
             } else {
                 yOffset = [self stackedSectionHeightUpToSection:closestSectionToCurrentTime];
             }

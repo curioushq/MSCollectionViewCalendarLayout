@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class EKEvent;
+
 @interface MSEvent : NSObject
 
 @property (nonatomic, strong) EKEvent *event;
