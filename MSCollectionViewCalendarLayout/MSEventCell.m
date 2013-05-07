@@ -120,10 +120,17 @@
 {
     _event = event;
     
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    dateFormatter.dateFormat = @"h:mm a";
-    
-    self.time.text = [dateFormatter stringFromDate:event.start];
+    if (event.timeText)
+    {
+        self.time.text = event.timeText;
+    }
+    else
+    {
+        NSDateFormatter *dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"h:mm a";
+        
+        self.time.text = [dateFormatter stringFromDate:event.startDate];
+    }
     self.title.text = event.title;
     self.location.text = event.location;
     

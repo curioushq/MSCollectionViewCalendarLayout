@@ -11,20 +11,5 @@
 
 @implementation MSEvent
 
-- (NSDate *)start
-{ 
-    return self.event.startDate;
-}
-
-- (NSString *)title
-{
-    return self.event.title;
-}
-
-- (NSString *)location
-{
-    return self.event.location;
-}
-
 @end
 

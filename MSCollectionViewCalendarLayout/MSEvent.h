@@ -12,9 +12,11 @@
 
 @interface MSEvent : NSObject
 
-@property (nonatomic, strong) EKEvent *event;
-@property (nonatomic, readonly) NSDate *start;
-@property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) NSString *location;
+@property (nonatomic, strong) NSDate *startDate;
+@property (nonatomic, strong) NSDate *endDate;
+
+@property (nonatomic, strong) NSString *timeText;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *location;
 
 @end
