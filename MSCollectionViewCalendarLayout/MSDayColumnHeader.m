@@ -21,6 +21,7 @@
         self.title.backgroundColor = [UIColor clearColor];
         self.title.shadowColor = [UIColor whiteColor];
         self.title.shadowOffset = CGSizeMake(0.0, 1.0);
+        self.title.font = [UIFont systemFontOfSize:14.0];
         [self addSubview:self.title];
     }
     return self;

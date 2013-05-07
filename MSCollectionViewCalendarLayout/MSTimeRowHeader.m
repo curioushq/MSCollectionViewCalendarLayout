@@ -18,7 +18,7 @@
         self.backgroundColor = [UIColor clearColor];
         self.title = [UILabel new];
         self.title.backgroundColor = [UIColor clearColor];
-        self.title.font = [UIFont systemFontOfSize:12.0];
+        self.title.font = [UIFont systemFontOfSize:10.0];
         self.title.textColor = [UIColor colorWithHexString:@"918c8c"];
         self.title.shadowColor = [UIColor whiteColor];
         self.title.shadowOffset = CGSizeMake(0.0, 1.0);
